@@ -3,7 +3,7 @@
 require_once('tm_backend/config.php');
 include('assets/header.php');
 
-$query = "select * from task";
+$query = "select * from tasks";
 $result = mysqli_query($con, $query);
 ?>
 
@@ -14,12 +14,13 @@ $result = mysqli_query($con, $query);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Task Management Center</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
+    
 </head>
 <body>
-<section class="vh-100">
+<section class="vh-auto">
     <div class="container"><br><br>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="row row-cols-1 row-cols-md-5 row-cols-lg-3 g-4">
             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                 <div class="col">
                     <div class="card h-100 bg-success-subtle">
@@ -27,14 +28,14 @@ $result = mysqli_query($con, $query);
                             <h5 class="card-title">Title: <?php echo $row['title'] ?></h5>
                             <p class="card-text">Description: <?php echo $row['description'] ?></p>
                             <ul class="list-group list-group-flush">
-                            <li class="list-group-item <?php echo ($row['priority'] == 'Low') ? 'bg-warning' : (($row['priority'] == 'Medium') ? 'bg-info' : 'bg-danger') ?>">
+                            <li class="list-group-item <?php echo ($row['priority'] == 'Low') ? 'bg-warning text-white' : (($row['priority'] == 'Medium') ? 'bg-info text-white' : 'bg-danger text-white') ?>">
                                 Priority: <?php echo $row['priority'] ?>
                             </li>
                                 <li class="list-group-item bg-warning-subtle">Due Date: <?php echo $row['due_date'] ?></li>
                             </ul>
                         </div>
-                        <div class="card-footer text-center">
-                            <a href="updateTask.php" class="btn btn-success btn-sm">Update</a>
+                        <div class="card-footer text-end">
+                        <a href="updateTask.php?id=<?php echo $row['id']; ?>" class="btn btn-success btn-sm">Edit</a>
                             <form action="tm_backend/deleteTask.php" method="post" class="d-inline">
                                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirmDelete()">Delete</button>
@@ -45,7 +46,7 @@ $result = mysqli_query($con, $query);
             <?php } ?>
         </div>
         <div class="text-center mt-4">
-            <a href="addTask.php" class="btn btn-primary btn-lg">Add Task</a>
+            <a href="addTask.php" class="btn btnpri btn-lg btn-success text-white">Add Task</a>
         </div>
     </div>
 </section>
@@ -74,6 +75,6 @@ if (isset($_SESSION['status']) && $_SESSION['status_code'] != '') {
     unset($_SESSION['status_code']);
 }
 ?>
+</body><br>
 <?php include('assets/footer.php'); ?>
-</body>
 </html>

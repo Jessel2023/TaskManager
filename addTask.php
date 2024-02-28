@@ -8,6 +8,7 @@ include('assets/header.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
     <title>Task Manager</title>
 </head>
 <body>
@@ -15,7 +16,7 @@ include('assets/header.php');
     <br>
     <h1 class="text-center">Add a Task</h1>
 <form action="tm_backend/insertTask.php" method="POST">
-    <div class= "text-white p-3 justify-content-center align-items-center mx-auto m-5 w-50 bg-success">
+    <div class= "form text-white p-3 justify-content-center align-items-center mx-auto m-5 w-50">
     <div class="form-outline flex-fill mb-0 ">
         <label class="form-label" for="form3Example4cd">Task Title</label>
         <input type="text" id="form3Example4cd" class="form-control text-dark" name="title" />
@@ -36,7 +37,7 @@ include('assets/header.php');
         <label for="dueDate">Due Date</label>
         <input type="date" class="form-control text-dark" id="dueDate" name="date">
     </div>
-  <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  <button type="submit" class="btn btnpri btn-primary mt-3">Submit</button>
   </div>
 </form>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

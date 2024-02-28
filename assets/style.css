@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    /*background: url('bg.gif') no-repeat center center fixed;
+    background-size: cover;*/
+    background-color: rgb(3, 174, 134);
+    color: #fffefe;
+    font-family:monospace;
+    
+}
+
+.content {
+    text-align: center;
+    padding: 50px;
+    color: white;
+}
+.header {
+    background-color: white;
+}
+.footer {
+    background-color: rgb(1, 103, 91);
+    position: relative;
+    bottom: 0;
+
+}
+.section{
+    background-color: rgb(3, 174, 134);
+
+}
+.form {
+    background-color: rgb(0, 170, 155);
+    border-style: dotted;
+}
+.btnpri{
+    background-color: rgb(4, 108, 75);
+}

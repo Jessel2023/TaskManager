@@ -3,13 +3,10 @@ session_start();
 require_once('config.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Check if task ID is set
     if (isset($_POST['id'])) {
-        // Sanitize task ID
         $id = $_POST['id'];
 
-        // Prepare the SQL query to delete the task with the specified ID
-        $query = "DELETE FROM task WHERE id = '$id'";
+        $query = "DELETE FROM tasks WHERE id = '$id'";
         $result = mysqli_query($con, $query);
 
         if ($result) {
@@ -28,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['status_code'] = "error";
 }
 
-// Redirect back to the index page after deletion
 header("Location: http://localhost/Taskmanager/index.php");
 exit();
 ?>
