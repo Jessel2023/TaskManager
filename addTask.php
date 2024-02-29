@@ -38,6 +38,10 @@ include('assets/header.php');
         <input type="date" class="form-control text-dark" id="dueDate" name="date">
     </div>
   <button type="submit" class="btn btnpri btn-primary mt-3">Submit</button>
+  <button class="btn btn-danger mt-3">
+    <a href="index.php" style="color: white; text-decoration: none;">Cancel</a>
+</button>
+
   </div>
 </form>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

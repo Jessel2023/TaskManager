@@ -53,7 +53,13 @@ if (isset($_GET['id'])) {
             <label for="due_date">Due Date</label>
             <input type="date" class="form-control" id="due_date" name="date" value="<?php echo $row['due_date']; ?>">
         </div>
+        <div class= "text-end">
         <button type="submit" class="btn btnpri btn-primary btn-sm">Update</button>
+        <button class="btn btn-danger btn-sm">
+            <a href="index.php" style="color: white; text-decoration: none;">Cancel</a>
+        </button>
+        </div>
+
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
